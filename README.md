@@ -83,7 +83,7 @@ Including the 'id' field enables easy identification and management of fresh pro
 
 Prompt:
 
-```
+```text
 Generate a JSON sample of 3 such entities with realistic values.
 ```
 
@@ -144,7 +144,7 @@ included in the JSON output.
 
 Here’s the full general structure of a JSON schema:
 
-```jsx
+```js
 json_schema = {
 	"type": "object",
 	"properties": {
@@ -166,7 +166,7 @@ For the `data type value`, the following are supported:
 
 We will be using the following JSON schema for our prompts:
 
-```jsx
+```js
 json_schema = {
   type: "object",
   properties: {
@@ -182,18 +182,20 @@ json_schema = {
 
 Here’s the example from the first method generated using a JSON schema prompt:
 
-```jsx
+```js
 Generate JSON sample data for fresh produce on an online grocery store based on the following JSON schema:
 
-```
-
-json_schema = { "type": "object", "properties": { "id": {"type": "number"},
-"name": {"type": "string", "description": "produce name"}, "description":
-{"type": "string"}, "price": {"type": "number", "description": "price of produce
-in USD"}, "quantity": {"type": "number"}, "availability": {"type": "boolean"}, }
-}
-
-```
+json_schema = {
+  type: "object",
+  properties: {
+    id: { type: "number" },
+    name: { type: "string", description: "produce name" },
+    description: { type: "string" },
+    price: { type: "number", description: "price of produce in USD" },
+    quantity: { type: "number" },
+    availability: { type: "boolean" },
+  },
+};
 
 ```
 
@@ -231,19 +233,20 @@ Response:
 Let’s add a `description` field to the `id` key in the schema and see how it
 affects the output:
 
-```jsx
+```js
 Generate JSON sample data for fresh produce on an online grocery store based on the following JSON schema:
 
-```
-
-json_schema = { "type": "object", "properties": { "id": {"type": "number",
-"description": "use a random hexadecimal UUID value"}, "name": {"type":
-"string", "description": "produce name"}, "description": {"type": "string"},
-"price": {"type": "number", "description": "price of produce in USD"},
-"quantity": {"type": "number"}, "availability": {"type": "boolean"}, } }
-
-```
-
+json_schema = {
+	"type": "object",
+	"properties": {
+		"id": {"type": "number", "description": "use a random hexadecimal UUID value"},
+		"name": {"type": "string", "description": "produce name"},
+		"description": {"type": "string"},
+		"price": {"type": "number", "description": "price of produce in USD"},
+		"quantity": {"type": "number"},
+		"availability": {"type": "boolean"},
+	}
+}
 ```
 
 Response:
