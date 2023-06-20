@@ -131,7 +131,7 @@ Each property in the schema can be provided an object with a `type` and
 field and the description lets us provide additional context or information for
 the field. Here’s the general structure of a JSON schema outer object:
 
-```json
+```js
 json_schema = {
 	"type": "object",
 	"properties": { ... }
@@ -144,7 +144,7 @@ included in the JSON output.
 
 Here’s the full general structure of a JSON schema:
 
-```json
+```js
 json_schema = {
 	"type": "object",
 	"properties": {
@@ -166,18 +166,18 @@ For the `data type value`, the following are supported:
 
 We will be using the following JSON schema for our prompts:
 
-```json
+```js
 json_schema = {
-	"type": "object",
-	"properties": {
-		"id": {"type": "number"},
-		"name": {"type": "string", "description": "produce name"},
-		"description": {"type": "string"},
-		"price": {"type": "number", "description": "price of produce in USD"},
-		"quantity": {"type": "number"},
-		"availability": {"type": "boolean"},
-	}
-}
+  type: "object",
+  properties: {
+    id: { type: "number" },
+    name: { type: "string", description: "produce name" },
+    description: { type: "string" },
+    price: { type: "number", description: "price of produce in USD" },
+    quantity: { type: "number" },
+    availability: { type: "boolean" },
+  },
+};
 ```
 
 Here’s the example from the first method generated using a JSON schema prompt:
