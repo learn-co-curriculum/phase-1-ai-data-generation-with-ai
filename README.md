@@ -131,7 +131,7 @@ Each property in the schema can be provided an object with a `type` and
 field and the description lets us provide additional context or information for
 the field. Here’s the general structure of a JSON schema outer object:
 
-```json
+```plaintext
 json_schema = {
 	"type": "object",
 	"properties": { ... }
@@ -144,7 +144,7 @@ included in the JSON output.
 
 Here’s the full general structure of a JSON schema:
 
-```js
+```plaintext
 json_schema = {
 	"type": "object",
 	"properties": {
@@ -239,7 +239,7 @@ Generate JSON sample data for fresh produce on an online grocery store based on 
 json_schema = {
 	"type": "object",
 	"properties": {
-		"id": {"type": "number", "description": "use a random hexadecimal UUID value"},
+		"id": {"type": "string", "description": "use a random hexadecimal UUID value"},
 		"name": {"type": "string", "description": "produce name"},
 		"description": {"type": "string"},
 		"price": {"type": "number", "description": "price of produce in USD"},
@@ -254,7 +254,7 @@ Response:
 ```json
 [
   {
-    "id": 428148f6-5e54-4e41-a0d5-82b442e3e7c9,
+    "id": "428148f6-5e54-4e41-a0d5-82b442e3e7c9",
     "name": "Bananas",
     "description": "Fresh and ripe bananas from tropical farms.",
     "price": 0.29,
@@ -262,7 +262,7 @@ Response:
     "availability": true
   },
   {
-    "id": f7407b68-806a-4dc3-bec6-d2f0211b342a,
+    "id": "f7407b68-806a-4dc3-bec6-d2f0211b342a",
     "name": "Carrots",
     "description": "Organic carrots with a vibrant orange color.",
     "price": 1.99,
@@ -270,7 +270,7 @@ Response:
     "availability": true
   },
   {
-    "id": c43b7c0a-9fc3-4742-8d53-2878a0e3fd45,
+    "id": "c43b7c0a-9fc3-4742-8d53-2878a0e3fd45",
     "name": "Strawberries",
     "description": "Plump and juicy strawberries, perfect for desserts.",
     "price": 2.49,
@@ -279,6 +279,9 @@ Response:
   }
 ]
 ```
+
+Note that we had to change the data type for the "id" key since we're not using
+a simple number anymore.
 
 The chatbot also mentions the modification:
 
