@@ -131,7 +131,7 @@ Each property in the schema can be provided an object with a `type` and
 field and the description lets us provide additional context or information for
 the field. Here’s the general structure of a JSON schema outer object:
 
-```js
+```json
 json_schema = {
 	"type": "object",
 	"properties": { ... }
@@ -144,7 +144,7 @@ included in the JSON output.
 
 Here’s the full general structure of a JSON schema:
 
-```js
+```jsx
 json_schema = {
 	"type": "object",
 	"properties": {
@@ -166,7 +166,7 @@ For the `data type value`, the following are supported:
 
 We will be using the following JSON schema for our prompts:
 
-```js
+```jsx
 json_schema = {
   type: "object",
   properties: {
@@ -182,7 +182,7 @@ json_schema = {
 
 Here’s the example from the first method generated using a JSON schema prompt:
 
-```json
+```jsx
 Generate JSON sample data for fresh produce on an online grocery store based on the following JSON schema:
 
 ```
@@ -231,7 +231,7 @@ Response:
 Let’s add a `description` field to the `id` key in the schema and see how it
 affects the output:
 
-```json
+```jsx
 Generate JSON sample data for fresh produce on an online grocery store based on the following JSON schema:
 
 ```
